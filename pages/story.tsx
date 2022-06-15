@@ -10,6 +10,9 @@ type homeP = {
       title: string;
       author: string;
       body: string;
+      createdAt: string;
+      updatedAt: string;
+      publishedAt: string;
     };
   }[];
 };
@@ -22,7 +25,7 @@ const Home: NextPage<homeP> = ({ stories }) => {
       </Head>
       <h1 className={styles.appTitle}>Short Bite</h1>
       <div className={styles.storyContainer}>
-        {stories?.map((story) => (
+        {stories.map((story) => (
           <Story
             title={story.attributes.title}
             author={story.attributes.author}
